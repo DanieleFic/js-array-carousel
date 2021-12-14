@@ -10,14 +10,18 @@
     <title>JS-ARRAY-CAROUSEL</title>
 </head>
 <body>
-    <div class="ms_maincontainer my-5  container-fluid d-flex ">
+    <div class="ms_maincontainer my-5 p-0 container-fluid d-flex ">
         <div class="container p-0 ms_main">
             
         </div>
         <div class="ms_side d-flex position-relative flex-column">
-            <i class="bi bi-arrow-up-circle-fill position-absolute top-0 start-50 translate-middle-x"></i>
+            <div id="ms_up">
+                <i class="bi bi-arrow-up-circle-fill ms_up position-absolute top-0 start-50 translate-middle-x"></i>
+            </div>
             
-            <i class="bi bi-arrow-down-circle-fill position-absolute bottom-0 start-50 translate-middle-x"></i>
+            <div id="ms_down">
+                <i class="bi bi-arrow-down-circle-fill ms_down  position-absolute bottom-0 start-50 translate-middle-x"></i>
+            </div>
         </div>
     </div>
     <!-- JavaScript Bundle with Popper -->
