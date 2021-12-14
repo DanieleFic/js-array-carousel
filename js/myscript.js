@@ -29,6 +29,10 @@ for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a rie
     immagineMain += `
         <div class="item" id="item-${i}">
             <img src="${ImmaginiArr[i]}">
+            <div class="ms_text">
+                <h3 class="m-0 px-2"> ${title[i]}</h3>
+                <p class="m-0 px-2"> ${text[i]}</h3>
+            </div>    
         </div>`;
 }
 
@@ -53,19 +57,6 @@ const contenitoreSide = document.querySelector ('.ms_side');
 contenitoreSide.innerHTML += immaginiLaterali;
 //fine immagine principale 
 
-
-
-//let testoMain =  ''; //creiamo una variabile let(perchè il contenuto cambia) vuota che poi andremo a riempire
-
-//for (let i = 0; i< title.length; i++){ //creiamo un ciclo for che va a riempire il contenuto della nostra variabile immagineMain per ogni volta fino a quando la funzione .lenght lo rende possibile 
-//    testoMain += `
-//        <h3 class="titolo" id="titolo1-${i}">
-//            
-//        </h3>`;
-//}
-
-//const contenitoreTesto = document.querySelector ('.titolo');
-//contenitoreTesto.innerHTML =+ testoMain;
 
 //non funziona
 const up = document.getElementById ('.ms_up');

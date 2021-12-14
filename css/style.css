@@ -1,3 +1,6 @@
+body{
+    background-color: cadetblue;
+}
 .ms_main{
     height: 500px;
     width: 1000px;
@@ -23,6 +26,13 @@ img {
 
 .ms_maincontainer{
     width: 1000px;
+}
+
+.ms_text{
+    position: absolute;
+    top: 70%;
+    color: white;
+    text-align: right;
 }
 
 /*
@@ -55,4 +65,5 @@ img:hover {
 
 .active{
     display: block;
+    position: relative;
 }
