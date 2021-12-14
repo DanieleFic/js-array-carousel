@@ -1,3 +1,21 @@
 .ms_main{
-    height: 300px;
+    height: 500px;
 }
+
+.ms_side{
+    height: 500px;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+}
+
+.ms_side img{
+    height: calc(100% / 5);
+}
+
+.ms_maincontainer{
+    width: 1000px;
+}
+
