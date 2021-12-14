@@ -31,3 +31,20 @@ img:hover {
 .bi{
     font-size: 20px;
 }
+
+.item{
+    height: 100%;
+    display: none;
+}
+
+.items{
+    height: 100%;
+}
+
+.items img{
+    height: calc(100% / 5);
+}
+
+.active{
+    display: block;
+}
