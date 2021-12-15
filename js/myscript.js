@@ -31,7 +31,7 @@ for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a rie
         <div class="item" id="item-${i}">
             <img src="${ImmaginiArr[i]}">
             <div class="ms_text">
-                <h3 class="m-0 px-2"> ${title[i]}</h3>
+                <h2 class="m-0 px-2"> ${title[i]}</h3>
                 <p class="m-0 px-2"> ${text[i]}</h3>
             </div>    
         </div>`;
@@ -50,15 +50,18 @@ let immaginiLaterali =  ''; //creiamo una variabile let(perchè il contenuto cam
 
 for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a riempire il contenuto della nostra variabile immagineMain per ogni volta fino a quando la funzione .lenght lo rende possibile 
     immaginiLaterali += `
-        <div class="items" id="item-${i}">
-            <img src="${ImmaginiArr[i]}">
+        <div class="items" id="img_laterali-${i}">
+            <img class="" src="${ImmaginiArr[i]}">
         </div>`;
-}
+    }
+    
 
-let contenitoreSide = document.querySelector ('.ms_side' );
-contenitoreSide.innerHTML += immaginiLaterali;  //aggiungiamo ImmagineLaterli nella classe(specificata nel for) .ms_side dell html
+let contenitoreSide = document.querySelector ('.ms_side');
+contenitoreSide.innerHTML += immaginiLaterali;//aggiungiamo ImmagineLaterli nella classe(specificata nel for) .ms_side dell html  
 //fine immagine laterali
 
+let immaginiLateraliOpacity = document.getElementById('img_laterali-'+ elementActive)
+immaginiLateraliOpacity.classList.add('activeminiature')
 
 //funziona
 const frecciaSopra = document.getElementById ('ms_up');
@@ -73,6 +76,10 @@ frecciaSopra.addEventListener('click', function() {
     imgActive.classList.remove('active')
     imgActive = document.getElementById('item-' + elementActive)
     imgActive.classList.add('active')
+
+    immaginiLateraliOpacity.classList.remove('activeminiature')
+    immaginiLateraliOpacity = document.getElementById('img_laterali-' + elementActive)
+    immaginiLateraliOpacity.classList.add('activeminiature')
     
 
 });
@@ -86,15 +93,18 @@ frecciaSotto.addEventListener('click', function() {
     imgActive.classList.remove('active')
     imgActive = document.getElementById('item-' + elementActive)
     imgActive.classList.add('active')
+
+    immaginiLateraliOpacity.classList.remove('activeminiature')
+    immaginiLateraliOpacity = document.getElementById('img_laterali-' + elementActive)
+    immaginiLateraliOpacity.classList.add('activeminiature')
 });
 
-if(imgActive.classList.contains('active')){
-    immaginiLaterali.classList.add('opacity')
-}
+
+    
 
 
 
 
 
-
-/**/
+/*
+*/
