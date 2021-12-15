@@ -24,7 +24,7 @@ const text = [
 
 //inizio immagini principali
 let immagineMain =  ''; //creiamo una variabile let(perchè il contenuto cambia) vuota che poi andremo a riempire
-let elementActive = 0;  // creiamo una variabile e gli diamo 0 per renderla false che serve per rende le nostre img nascoste
+let elementActive = 0;  // creiamo una variabile e gli diamo 0 per far apparire come deaful l'immagine 0 dell array
 
 for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a riempire il contenuto della nostra variabile immagineMain per ogni volta fino a quando la funzione .lenght lo rende possibile 
     immagineMain += `
@@ -37,7 +37,7 @@ for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a rie
         </div>`;
 }
 const contenitoreMain = document.querySelector ('.container');
-contenitoreMain.innerHTML = immagineMain;
+contenitoreMain.innerHTML = immagineMain; //aggiungiamo ImmagineMain nella classe(specificata nel for) .container dell html 
 
 let imgActive = document.getElementById('item-' + elementActive) 
 imgActive.classList.add('active');
@@ -55,7 +55,7 @@ for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a rie
 }
 
 const contenitoreSide = document.querySelector ('.ms_side');
-contenitoreSide.innerHTML += immaginiLaterali;
+contenitoreSide.innerHTML += immaginiLaterali;  //aggiungiamo ImmagineLaterli nella classe(specificata nel for) .ms_side dell html
 //fine immagine laterali
 
 
@@ -66,11 +66,18 @@ const frecciaSopra = document.getElementById ('.ms_up');
 const frecciaSotto = document.getElementById ('.ms_down');
 
 frecciaSopra.addEventListener('click', function() {
-    elementActive++;
+    elementActive++; //incremento dell elementActive per cambiare immagine 
     
 });
 
 frecciaSotto.addEventListener('click', function() {
-    elementActive--;
+    elementActive--; //decremento dell elementActive per cambiare immagine 
     
 });
+
+
+
+
+/*imgActive.classList.remove('active')
+imgActive = document.getElementById('item-' + elementActive)
+imgActive.classList.add('active')*/
