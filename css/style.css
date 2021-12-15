@@ -9,6 +9,7 @@ body{
 a{
     color: black;
     opacity: 0.5;
+    text-decoration: none;
 }
 
 .ms_side{
@@ -61,3 +62,22 @@ img {
     display: block;
     position: relative;
 }
+
+.ms_up, .ms_down {
+    cursor: pointer;
+    position: absolute;
+    width: auto;
+    color: black;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: white;
+    border-radius: 30px;
+    opacity: 1;
+  }
+
+  .ms_up:hover, .ms_down:hover {
+    background-color: rgba(0,0,0,0.8);
+  }
