@@ -51,7 +51,9 @@ img {
 }
 
 .items{
-    height: calc(100% / 5)
+    height: calc(100% / 5);
+    opacity: 0.5;
+
 }
 
 .items img{
@@ -61,6 +63,7 @@ img {
 .active{
     display: block;
     position: relative;
+    opacity: 1;
 }
 
 .ms_up, .ms_down {
@@ -75,9 +78,14 @@ img {
     user-select: none;
     background-color: white;
     border-radius: 30px;
-    opacity: 1;
+    
+    z-index: 3;
   }
 
   .ms_up:hover, .ms_down:hover {
     background-color: rgba(0,0,0,0.8);
   }
+
+.opacity{
+    opacity: 1;
+}

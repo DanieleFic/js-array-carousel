@@ -41,6 +41,7 @@ contenitoreMain.innerHTML = immagineMain; //aggiungiamo ImmagineMain nella class
 
 let imgActive = document.getElementById('item-' + elementActive) 
 imgActive.classList.add('active');
+
 //fine immagine principale 
 
 
@@ -49,33 +50,49 @@ let immaginiLaterali =  ''; //creiamo una variabile let(perchè il contenuto cam
 
 for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a riempire il contenuto della nostra variabile immagineMain per ogni volta fino a quando la funzione .lenght lo rende possibile 
     immaginiLaterali += `
-        <div class="items " id="item-${i}">
+        <div class="items" id="item-${i}">
             <img src="${ImmaginiArr[i]}">
         </div>`;
 }
 
-const contenitoreSide = document.querySelector ('.ms_side');
+let contenitoreSide = document.querySelector ('.ms_side' );
 contenitoreSide.innerHTML += immaginiLaterali;  //aggiungiamo ImmagineLaterli nella classe(specificata nel for) .ms_side dell html
 //fine immagine laterali
 
 
-//non funziona
+//funziona
 const frecciaSopra = document.getElementById ('ms_up');
 const frecciaSotto = document.getElementById ('ms_down');
 
 frecciaSopra.addEventListener('click', function() {
-    elementActive--; //incremento dell elementActive per cambiare immagine al click
+    if (elementActive  == 0){
+        elementActive = 4
+    }else{
+        elementActive  --;//incremento dell elementActive per cambiare immagine al click
+    }  
+    imgActive.classList.remove('active')
+    imgActive = document.getElementById('item-' + elementActive)
+    imgActive.classList.add('active')
+    
+
+});
+
+frecciaSotto.addEventListener('click', function() {
+    if (elementActive  == 4){
+        elementActive = 0
+    }else{
+        elementActive  ++;//decremento dell elementActive per cambiare immagine al click
+    }
     imgActive.classList.remove('active')
     imgActive = document.getElementById('item-' + elementActive)
     imgActive.classList.add('active')
 });
 
-frecciaSotto.addEventListener('click', function() {
-    elementActive++; //decremento dell elementActive per cambiare immagine al click
-    imgActive.classList.remove('active')
-    imgActive = document.getElementById('item-' + elementActive)
-    imgActive.classList.add('active')
-});
+if(imgActive.classList.contains('active')){
+    immaginiLaterali.classList.add('opacity')
+}
+
+
 
 
 
