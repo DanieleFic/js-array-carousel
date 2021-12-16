@@ -23,10 +23,13 @@ const text = [
 ]
 
 //inizio immagini principali
-let immagineMain =  ''; //creiamo una variabile let(perchè il contenuto cambia) vuota che poi andremo a riempire
-let elementActive = 0;  // creiamo una variabile e gli diamo 0 per far apparire come deaful l'immagine 0 dell array
+let immagineMain =  ''; 
+//creiamo una variabile let(perchè il contenuto cambia) vuota che poi andremo a riempire
+let elementActive = 0;  
+// creiamo una variabile e gli diamo 0 per far apparire come deaful l'immagine 0 dell array (indice immagini)( contatore)
 
-for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a riempire il contenuto della nostra variabile immagineMain per ogni volta fino a quando la funzione .lenght lo rende possibile 
+for (let i = 0; i< ImmaginiArr.length; i++){
+    //creiamo un ciclo for che va a riempire il contenuto della nostra variabile immagineMain per ogni volta fino a quando la funzione .lenght lo rende possibile 
     immagineMain += `
         <div class="item" id="item-${i}">
             <img src="${ImmaginiArr[i]}">
@@ -46,9 +49,11 @@ imgActive.classList.add('active');
 
 
 //inizio immagini laterali
-let immaginiLaterali =  ''; //creiamo una variabile let(perchè il contenuto cambia) vuota che poi andremo a riempire
+let immaginiLaterali =  '';
+//creiamo una variabile let(perchè il contenuto cambia) vuota che poi andremo a riempire
 
-for (let i = 0; i< ImmaginiArr.length; i++){ //creiamo un ciclo for che va a riempire il contenuto della nostra variabile immagineMain per ogni volta fino a quando la funzione .lenght lo rende possibile 
+for (let i = 0; i< ImmaginiArr.length; i++){ 
+//creiamo un ciclo for che va a riempire il contenuto della nostra variabile immagineMain per ogni volta fino a quando la funzione .lenght lo rende possibile 
     immaginiLaterali += `
         <div class="items" id="img_laterali-${i}">
             <img class="" src="${ImmaginiArr[i]}">
@@ -63,7 +68,7 @@ contenitoreSide.innerHTML += immaginiLaterali;//aggiungiamo ImmagineLaterli nell
 let immaginiLateraliOpacity = document.getElementById('img_laterali-'+ elementActive)
 immaginiLateraliOpacity.classList.add('activeminiature')
 
-//funziona
+//Freccie sopra e sotto
 const frecciaSopra = document.getElementById ('ms_up');
 const frecciaSotto = document.getElementById ('ms_down');
 
@@ -71,7 +76,8 @@ frecciaSopra.addEventListener('click', function() {
     if (elementActive  == 0){
         elementActive = 4
     }else{
-        elementActive  --;//incremento dell elementActive per cambiare immagine al click
+        elementActive  --;
+        //decremento dell elementActive per cambiare immagine al click
     }  
     imgActive.classList.remove('active')
     imgActive = document.getElementById('item-' + elementActive)
@@ -88,7 +94,8 @@ frecciaSotto.addEventListener('click', function() {
     if (elementActive  == 4){
         elementActive = 0
     }else{
-        elementActive  ++;//decremento dell elementActive per cambiare immagine al click
+        elementActive  ++;
+        //incremento dell elementActive per cambiare immagine al click
     }
     imgActive.classList.remove('active')
     imgActive = document.getElementById('item-' + elementActive)
@@ -101,9 +108,6 @@ frecciaSotto.addEventListener('click', function() {
 
 
     
-
-
-
 
 
 /*
